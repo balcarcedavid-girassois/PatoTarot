@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pato Tarot — Tarot, Registros Akáshicos &amp; Sanación Energética</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#24101a;
+    --bg-mid:#3a1c2c;
+    --bg-panel:#2f1622;
+    --rose:#dd93ab;
+    --rose-soft:#eec3d2;
+    --rose-dim:#8a4f61;
+    --gold:#c9a15d;
+    --gold-light:#ecd6a0;
+    --cream:#f4e8e2;
+    --cream2:#f2e8e2;
+    --ink:#180a10;
+    --line:rgba(201,161,93,0.28);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-deep);
+    color:var(--cream2);
+    font-family:'EB Garamond', serif;
+    font-size:18px;
+    line-height:1.65;
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(ellipse at 20% -10%, rgba(221,147,171,0.14), transparent 55%),
+      radial-gradient(ellipse at 90% 10%, rgba(201,161,93,0.10), transparent 45%);
+  }
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    color:var(--gold-light);
+    letter-spacing:0.01em;
+  }
+  .eyebrow{
+    font-family:'Cinzel', serif;
+    font-size:0.68rem;
+    letter-spacing:0.32em;
+    text-transform:uppercase;
+    color:var(--rose);
+    display:inline-block;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- decorative sigil ---------- */
+  .sigil{display:block; margin:0 auto;}
+
+  /* ---------- nav ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(24,10,16,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:760px; margin:0 auto; padding:14px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:'Cinzel', serif; font-size:0.95rem; letter-spacing:0.22em;
+    color:var(--gold-light); text-decoration:none; display:flex; align-items:center; gap:10px;
+  }
+  .brand .sigil{width:22px; height:22px;}
+  .nav-cta{
+    font-family:'Cinzel', serif; font-size:0.62rem; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--ink); background:var(--gold);
+    padding:9px 16px; border-radius:2px; text-decoration:none;
+    white-space:nowrap;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; text-align:center;
+    padding:76px 28px 70px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 18%, rgba(221,147,171,0.20), transparent 60%);
+    pointer-events:none;
+  }
+  .hero .sigil-big{width:86px; height:86px; margin-bottom:26px; opacity:0.95;}
+  .hero .eyebrow{margin-bottom:18px;}
+  .hero h1{
+    font-size:clamp(2.6rem,9vw,3.6rem);
+    letter-spacing:0.03em;
+    margin-bottom:16px;
+  }
+  .hero h1 em{font-style:italic; color:var(--rose-soft);}
+  .hero p.lede{
+    font-size:1.18rem; color:var(--cream2); max-width:480px; margin:0 auto 34px;
+    font-style:italic; color:var(--rose-soft);
+  }
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px; justify-content:center;}
+  .btn-primary{
+    font-family:'Cinzel', serif; font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+    background:var(--gold); color:var(--ink); padding:15px 30px; border-radius:2px;
+    text-decoration:none; box-shadow:0 0 0 1px rgba(201,161,93,0.4), 0 12px 30px -12px rgba(201,161,93,0.6);
+  }
+  .btn-secondary{
+    font-family:'Cinzel', serif; font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase;
+    border:1px solid var(--line); color:var(--rose-soft); padding:15px 30px; border-radius:2px;
+    text-decoration:none;
+  }
+
+  /* ---------- moon phase divider (signature element) ---------- */
+  .moon-divider{
+    display:flex; align-items:center; justify-content:center; gap:0;
+    padding:46px 20px; max-width:520px; margin:0 auto;
+  }
+  .moon-divider svg{width:100%; height:auto;}
+
+  /* ---------- section base ---------- */
+  section{padding:64px 0;}
+  section.alt{background:linear-gradient(180deg, transparent, rgba(58,28,44,0.55) 12%, rgba(58,28,44,0.55) 88%, transparent);}
+  .section-head{text-align:center; margin-bottom:44px;}
+  .section-head .eyebrow{margin-bottom:12px;}
+  .section-head h2{font-size:clamp(1.9rem,6vw,2.4rem);}
+  .rule{
+    width:64px; height:1px; margin:20px auto 0;
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* ---------- about ---------- */
+  .about-grid{display:flex; flex-direction:column; gap:26px;}
+  .quote-block{
+    border-left:1px solid var(--gold);
+    padding:4px 0 4px 24px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.35rem;
+    color:var(--rose-soft);
+    line-height:1.5;
+    margin:34px 0;
+  }
+  .quote-block cite{
+    display:block; margin-top:14px; font-family:'Cinzel', serif; font-style:normal;
+    font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);
+  }
+
+  /* ---------- values strip ---------- */
+  .values-strip{
+    display:grid; grid-template-columns:1fr; gap:22px; margin-top:40px;
+  }
+  .value-item{
+    display:flex; gap:16px; align-items:flex-start;
+    border-top:1px solid var(--line); padding-top:18px;
+  }
+  .value-item .mark{color:var(--gold); font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-style:italic; flex-shrink:0; width:28px;}
+  .value-item p{font-size:0.98rem; color:var(--cream2);}
+  .value-item strong{color:var(--gold-light); font-weight:500; font-family:'Cormorant Garamond',serif; font-size:1.08rem;}
+
+  /* ---------- services ---------- */
+  .service-list{display:flex; flex-direction:column; gap:0;}
+  .service{
+    border-top:1px solid var(--line);
+    padding:26px 4px;
+    display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:flex-start;
+    transition:background 0.3s ease;
+  }
+  .service:last-child{border-bottom:1px solid var(--line);}
+  .service .icon{
+    width:44px; height:44px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .service .icon svg{width:100%; height:100%;}
+  .service h3{font-size:1.35rem; margin-bottom:6px; color:var(--gold-light);}
+  .service p{font-size:0.95rem; color:var(--cream2); opacity:0.92;}
+
+  /* ---------- workshops ---------- */
+  .workshop{
+    background:rgba(238,195,210,0.04);
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:22px 24px;
+    margin-bottom:16px;
+    position:relative;
+  }
+  .workshop .wtitle{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;}
+  .workshop h3{font-size:1.25rem; color:var(--gold-light);}
+  .duration{
+    font-family:'Cinzel', serif; font-size:0.6rem; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--gold); white-space:nowrap;
+  }
+  .workshop p{font-size:1.05rem; margin-top:8px; color:var(--cream2); opacity:0.9;}
+  .integration-note{
+    text-align:center; margin-top:30px; font-family:'Cormorant Garamond', serif; font-style:italic;
+    color:var(--rose); font-size:1.05rem;
+  }
+
+  /* ---------- contact ---------- */
+  .contact-card{
+    text-align:center;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:44px 30px;
+    background:radial-gradient(ellipse at 50% 0%, rgba(221,147,171,0.10), transparent 70%);
+  }
+  .contact-card .sigil{width:52px; height:52px; margin-bottom:20px; opacity:0.9;}
+  .contact-card h2{font-size:1.9rem; margin-bottom:14px;}
+  .contact-card p.note{color:var(--rose-soft); font-style:italic; margin-bottom:30px; font-size:1.02rem;}
+  .contact-links{display:flex; flex-direction:column; gap:12px; align-items:center;}
+  .contact-links a{
+    text-decoration:none; color:var(--cream2); font-size:0.98rem;
+    border-bottom:1px solid transparent;
+  }
+  .contact-links a:hover{border-bottom:1px solid var(--gold);}
+  .privado{
+    margin-top:28px; font-size:0.82rem; color:var(--rose-dim); font-style:italic;
+  }
+
+  footer{
+    text-align:center; padding:40px 28px 50px; color:var(--rose-dim); font-size:0.78rem;
+    font-family:'Cinzel', serif; letter-spacing:0.1em; text-transform:uppercase;
+  }
+  footer .sigil{width:20px; height:20px; margin:0 auto 14px; opacity:0.6;}
+
+  @media (min-width:640px){
+    .values-strip{grid-template-columns:1fr 1fr;}
+    .hero{padding:100px 28px 90px;}
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{opacity:0; transform:translateY(16px); transition:opacity 0.8s ease, transform 0.8s ease;}
+    .reveal.in{opacity:1; transform:translateY(0);}
+    .twinkle{animation:twinkle 4s ease-in-out infinite;}
+    @keyframes twinkle{0%,100%{opacity:0.4;} 50%{opacity:1;}}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <svg class="sigil" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" stroke="#c9a15d" stroke-width="1"/>
+        <path d="M32 14 A18 18 0 1 0 32 50 A13 13 0 1 1 32 14Z" fill="#dd93ab"/>
+        <circle cx="32" cy="32" r="3" fill="#c9a15d"/>
+      </svg>
+      Pato Tarot
+    </a>
+    <a class="nav-cta" href="https://wa.me/542915353479" target="_blank" rel="noopener">Consultar</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="sigil-big twinkle" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="56" stroke="#c9a15d" stroke-width="0.75"/>
+      <path d="M60 20 A40 40 0 1 0 60 100 A29 29 0 1 1 60 20Z" fill="#dd93ab" fill-opacity="0.85"/>
+      <circle cx="60" cy="60" r="6" fill="#c9a15d"/>
+      <g stroke="#c9a15d" stroke-width="0.6" opacity="0.7">
+        <line x1="60" y1="4" x2="60" y2="14"/>
+        <line x1="60" y1="106" x2="60" y2="116"/>
+        <line x1="4" y1="60" x2="14" y2="60"/>
+        <line x1="106" y1="60" x2="116" y2="60"/>
+      </g>
+    </svg>
+    <span class="eyebrow">Tarot · Registros Akáshicos · Sanación Energética</span>
+    <h1>Pato <em>Tarot</em></h1>
+    <p class="lede">Un espejo para encontrarte. Herramientas para leer tu momento, entender tu energía y sostenerte en el camino.</p>
+    <div class="cta-row">
+      <a class="btn-primary" href="https://wa.me/542915353479" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+      <a class="btn-secondary" href="#servicios">Ver servicios</a>
+    </div>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section class="reveal" id="sobre-mi">
+    <div class="wrap about-grid">
+      <div class="section-head" style="text-align:left; margin-bottom:8px;">
+        <span class="eyebrow">Sobre mí</span>
+        <h2 style="margin-top:10px;">Una herramienta que llevo desde siempre</h2>
+      </div>
+      <p>Conocí el tarot de chica, mirando a mis tías leer las cartas. En la adolescencia aprendí las cartas españolas con otra de ellas. Después llegaron el casamiento y mis hijos, y todo eso quedó en pausa por un tiempo.</p>
+      <p>Cuando mis hijos crecieron, volví — esta vez para formarme en serio, de la mano de Virginia Palacios, tarotista y astróloga de mi ciudad, y siguiendo siempre el pensamiento de Alejandro Jodorowsky.</p>
+      <div class="quote-block">
+        Manejo el tarot como un espejo. Voy más allá de lo que dicen los librillos: conecto con los colores, las miradas, las posturas de cada carta — con lo que resuena, según tu pregunta y tu contexto.
+        <cite>— Pato</cite>
+      </div>
+      <div class="values-strip">
+        <div class="value-item"><span class="mark">✦</span><p><strong>Un espejo, no una verdad.</strong> Te devuelvo lo que veo para que vos decidas qué hacer con eso.</p></div>
+        <div class="value-item"><span class="mark">✦</span><p><strong>Intuición + intelecto.</strong> Leo la carta y también lo que hay alrededor de ella.</p></div>
+        <div class="value-item"><span class="mark">✦</span><p><strong>Tu nombre tiene vibración.</strong> Trabajo también con la energía de tu nombre completo.</p></div>
+        <div class="value-item"><span class="mark">✦</span><p><strong>Preguntá con claridad.</strong> Una pregunta consciente abre una respuesta más precisa.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOON DIVIDER -->
+  <div class="moon-divider reveal">
+    <svg viewBox="0 0 520 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="10" y1="30" x2="510" y2="30" stroke="#c9a15d" stroke-opacity="0.25" stroke-width="1"/>
+      <!-- 8 moon phases -->
+      <g fill="#c9a15d">
+        <circle cx="40" cy="30" r="10" fill="none" stroke="#c9a15d" stroke-width="1"/>
+        <path d="M100 20a10 10 0 000 20 8 8 0 010-20z"/>
+        <path d="M160 20a10 10 0 000 20V20z"/>
+        <path d="M220 20a10 10 0 010 20 8 8 0 000-20z"/>
+        <circle cx="280" cy="30" r="10"/>
+        <path d="M340 20a10 10 0 000 20 8 8 0 000-20z" fill="#1a0d12"/>
+        <path d="M400 20a10 10 0 010 20V20z" fill="#1a0d12"/>
+        <path d="M460 20a10 10 0 010 20 8 8 0 010-20z" fill="#1a0d12"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- SERVICIOS -->
+  <section class="alt reveal" id="servicios">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Servicios</span>
+        <h2>Caminos de trabajo</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="service-list">
+        <div class="service">
+          <div class="icon"><svg viewBox="0 0 44 44" fill="none"><rect x="10" y="4" width="24" height="36" rx="3" stroke="#c9a15d" stroke-width="1.2"/><circle cx="22" cy="22" r="5" stroke="#dd93ab" stroke-width="1.2"/></svg></div>
+          <div><h3>Tarot</h3><p>Lecturas online, en vivo por videollamada o Zoom. También respondo por audio a las consultas que me dejás escritas por WhatsApp.</p></div>
+        </div>
+        <div class="service">
+          <div class="icon"><svg viewBox="0 0 44 44" fill="none"><line x1="22" y1="4" x2="22" y2="26" stroke="#c9a15d" stroke-width="1.2"/><circle cx="22" cy="32" r="6" stroke="#dd93ab" stroke-width="1.2"/></svg></div>
+          <div><h3>Péndulo Hebreo</h3><p>Diagnóstico y desacople de energías de baja frecuencia con el alfabeto hebreo. Limpieza, alineación del campo electromagnético e irradiación con los Setenta y Dos Nombres de Dios.</p></div>
+        </div>
+        <div class="service">
+          <div class="icon"><svg viewBox="0 0 44 44" fill="none"><polygon points="22,4 38,22 22,40 6,22" stroke="#c9a15d" stroke-width="1.2"/><circle cx="22" cy="22" r="4" stroke="#dd93ab" stroke-width="1.2"/></svg></div>
+          <div><h3>Mesa Cuántica Radiónica</h3><p>Desbloqueos con geometría sagrada, péndulo y biómetro. Irradiación en la Llama Trina y los Doce Rayos Sagrados de Elohim.</p></div>
+        </div>
+        <div class="service">
+          <div class="icon"><svg viewBox="0 0 44 44" fill="none"><circle cx="22" cy="22" r="16" stroke="#c9a15d" stroke-width="1.2"/><path d="M22 6v32M6 22h32" stroke="#dd93ab" stroke-width="1"/></svg></div>
+          <div><h3>Tameana</h3><p>Sanación energética ancestral para reconectar cuerpo, mente y espíritu, y recuperar tu equilibrio natural.</p></div>
+        </div>
+        <div class="service">
+          <div class="icon"><svg viewBox="0 0 44 44" fill="none"><path d="M22 6c8 6 14 12 14 20a14 14 0 01-28 0c0-8 6-14 14-20z" stroke="#c9a15d" stroke-width="1.2"/></svg></div>
+          <div><h3>Registros Akáshicos</h3><p>Apertura de tu registro para diferenciar karma de dharma y conectar con la información de tu alma. Formación disponible en tres niveles.</p></div>
+        </div>
+        <div class="service">
+          <div class="icon"><svg viewBox="0 0 44 44" fill="none"><path d="M22 4l4 14 14 4-14 4-4 14-4-14-14-4 14-4z" stroke="#dd93ab" stroke-width="1.2"/></svg></div>
+          <div><h3>Canalización con Arcángeles</h3><p>Un encuentro de respiración y conexión para recibir la guía angélica en el momento que estás transitando.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TALLERES -->
+  <section class="reveal" id="talleres">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Talleres y cursos</span>
+        <h2>Para aprender el camino</h2>
+        <div class="rule"></div>
+      </div>
+
+      <div class="workshop">
+        <div class="wtitle"><h3>El Viaje del Loco</h3><span class="duration">3 horas · online</span></div>
+        <p>Contado como un cuento. Recorremos los 22 arcanos mayores, del Loco al Mundo, para reconocer en cada uno nuestros mayores conflictos y nuestras mayores bendiciones. Ideal si recién compraste tu primer mazo.</p>
+      </div>
+
+      <div class="workshop">
+        <div class="wtitle"><h3>Registros Akáshicos — Niveles I, II y III</h3><span class="duration">2–3 horas c/u</span></div>
+        <p>Nivel I: abrí tus propios registros y aprendé a diferenciar karma de dharma. Nivel II: aprendé a abrir los registros de otra persona. Nivel III: la maestría, para enseñar.</p>
+      </div>
+
+      <div class="workshop">
+        <div class="wtitle"><h3>Canalización con Arcángeles</h3><span class="duration">2 horas</span></div>
+        <p>Un taller de un día para aprender a respirar y conectar con la guía angélica.</p>
+      </div>
+
+      <div class="workshop">
+        <div class="wtitle"><h3>Aprendé a programar tu péndulo</h3><span class="duration">2 horas</span></div>
+        <p>Para alinear chakras y reconocer energías discordantes en cualquier lugar. No hace falta tener péndulo: alcanza con una cadena y un anillo, y ganas de aprender.</p>
+      </div>
+
+      <div class="workshop">
+        <div class="wtitle"><h3>Curso de Arcanos Mayores</h3><span class="duration">Formato mensual</span></div>
+        <p>Un arcano por clase, en profundidad, para quienes quieren seguir el camino del Viaje del Loco.</p>
+      </div>
+
+      <div class="workshop">
+        <div class="wtitle"><h3>Curso de Arcanos Menores y Figuras de la Corte</h3><span class="duration">Formato mensual</span></div>
+        <p>La continuación natural para quienes ya recorrieron los arcanos mayores.</p>
+      </div>
+
+      <p class="integration-note">Cada taller incluye un proceso de integración de 21 días, para que lo aprendido baje de la mente consciente al subconsciente.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="alt reveal" id="contacto">
+    <div class="wrap">
+      <div class="contact-card">
+        <svg class="sigil" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="30" stroke="#c9a15d" stroke-width="1"/>
+          <path d="M32 14 A18 18 0 1 0 32 50 A13 13 0 1 1 32 14Z" fill="#dd93ab"/>
+          <circle cx="32" cy="32" r="3" fill="#c9a15d"/>
+        </svg>
+        <h2>Empecemos</h2>
+        <p class="note">Escribime y coordinamos tu lectura, sesión o taller.</p>
+        <div class="contact-links">
+          <a href="https://wa.me/542915353479" target="_blank" rel="noopener">WhatsApp · +54 291 535 3479</a>
+          <a href="mailto:pato64.tarot@gmail.com">pato64.tarot@gmail.com</a>
+          <a href="https://instagram.com/sendarealbalru" target="_blank" rel="noopener">Instagram · @sendarealbalru</a>
+          <a href="https://tiktok.com/@patotarot" target="_blank" rel="noopener">TikTok · @patotarot</a>
+        </div>
+        <p class="privado">Los valores de cada consulta y taller se comparten por privado.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <svg class="sigil" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="30" stroke="#c9a15d" stroke-width="1"/>
+    <path d="M32 14 A18 18 0 1 0 32 50 A13 13 0 1 1 32 14Z" fill="#c9a15d"/>
+  </svg>
+  Pato Tarot
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12});
+    revealEls.forEach(el=>io.observe(el));
+  } else {
+    revealEls.forEach(el=>el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
